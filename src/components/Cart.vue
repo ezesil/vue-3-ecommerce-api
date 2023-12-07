@@ -17,7 +17,7 @@ export default {
         </v-card-title>
         <v-card-text>
             <v-list>
-                <v-list-item v-for="product in details" :value="product?.productId">
+                <v-list-item v-for="product in details" :value="product?.id">
                     <v-list-item-title>
                         Nombre: {{product?.name}}
                         Cantidad: {{product?.count}}

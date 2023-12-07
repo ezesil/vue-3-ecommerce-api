@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { type Product } from '../models/Product.ts'
+import { type Product } from '../models/Product'
 
 const productss:Array<Product> = [
     { id: 1, name: "Silla", price: 56}, 

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { type CartDetails, type Product } from '../models/Product.ts'
+import { type CartDetails, type Product } from '../models/Product'
 
 export const useCartStore = defineStore('cart', {
     state: () => ({ details: <Array<CartDetails>>[] }),

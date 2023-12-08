@@ -1,0 +1,1 @@
+import{u as a,C as s,_ as o,r,o as n,c}from"./index-a24fbd23.js";const l={computed:{details(){return a().details}},components:{Cart:s}};function p(_,d,i,u,m,t){const e=r("Cart");return n(),c(e,{details:t.details},null,8,["details"])}const f=o(l,[["render",p]]);export{f as default};

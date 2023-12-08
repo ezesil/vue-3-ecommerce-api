@@ -26,5 +26,5 @@ COPY --from=build_vue /app/vueapp/dist vueapp
 RUN apt-get update && apt-get install -y nginx
 
 # Configuración de Nginx
-EXPOSE 80
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]

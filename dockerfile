@@ -12,8 +12,6 @@ WORKDIR /app/webapi
 COPY webapi/*.csproj ./
 RUN dotnet restore
 COPY webapi/ .
-RUN rm -rf /etc/nginx/conf.d/default.conf
-COPY webapi/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 RUN dotnet publish -c Release -o out
 
 # Etapa final, combinación de ambas aplicaciones en una imagen
@@ -24,7 +22,9 @@ COPY --from=build_vue /app/vueapp/dist vueapp
 
 # Configuración de Nginx para servir frontend y redirigir a backend
 RUN apt-get update && apt-get install -y nginx
+RUN rm -rf /etc/nginx/nginx.conf
+COPY webapi/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Configuración de Nginx
-EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 8081
+CMD service nginx start && dotnet /app/webapi/webapi.dll && tail -f /dev/null

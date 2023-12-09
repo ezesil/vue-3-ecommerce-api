@@ -5,13 +5,20 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vueapp", "vueapp\vueapp.esproj", "{DBE5DE36-2B06-4326-B9C3-B9AA7CEE7267}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi", "webapi\webapi.csproj", "{69C16F33-E8B3-4C2C-BF49-290849010DF0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{D50CF68F-3C9E-4682-92B0-0E5E6C7F8D88}"
 	ProjectSection(SolutionItems) = preProject
 		dockerfile = dockerfile
-		nginx.conf = nginx.conf
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apiweb", "apiweb\apiweb.csproj", "{6A0877DD-E78C-4FC3-8AE9-4FA6B92EDC47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{83051565-30D0-4C84-A128-6DE56995113D}"
+	ProjectSection(SolutionItems) = preProject
+		webapi\nginx\mime.types = webapi\nginx\mime.types
+		webapi\nginx\nginx.conf = webapi\nginx\nginx.conf
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +32,14 @@ Global
 		{DBE5DE36-2B06-4326-B9C3-B9AA7CEE7267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBE5DE36-2B06-4326-B9C3-B9AA7CEE7267}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DBE5DE36-2B06-4326-B9C3-B9AA7CEE7267}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{69C16F33-E8B3-4C2C-BF49-290849010DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69C16F33-E8B3-4C2C-BF49-290849010DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69C16F33-E8B3-4C2C-BF49-290849010DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69C16F33-E8B3-4C2C-BF49-290849010DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A0877DD-E78C-4FC3-8AE9-4FA6B92EDC47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A0877DD-E78C-4FC3-8AE9-4FA6B92EDC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A0877DD-E78C-4FC3-8AE9-4FA6B92EDC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A0877DD-E78C-4FC3-8AE9-4FA6B92EDC47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,11 +14,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apiweb", "apiweb\apiweb.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{83051565-30D0-4C84-A128-6DE56995113D}"
 	ProjectSection(SolutionItems) = preProject
-		webapi\nginx\mime.types = webapi\nginx\mime.types
-		webapi\nginx\nginx.conf = webapi\nginx\nginx.conf
+		nginx\mime.types = nginx\mime.types
+		nginx\nginx.conf = nginx\nginx.conf
+		apiweb\nginx\start.sh = apiweb\nginx\start.sh
+		nginx\working.nginx.conf = nginx\working.nginx.conf
 	EndProjectSection
-EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,10 +36,6 @@ Global
 		{6A0877DD-E78C-4FC3-8AE9-4FA6B92EDC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A0877DD-E78C-4FC3-8AE9-4FA6B92EDC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A0877DD-E78C-4FC3-8AE9-4FA6B92EDC47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9C992FF-E7DE-402E-BBB0-5BAD388FDCA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

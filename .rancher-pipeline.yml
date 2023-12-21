@@ -1,0 +1,15 @@
+stages:
+- name: compile and build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: vue-3-ecommerce-vs-test:latest
+      pushRemote: true
+      registry: http://192.168.0.166:8081/repository/docker-repo/
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+timeout: 60
+notification: {}

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-3-ecommerce-vs-test
+spec:
+  replicas: 3  # Número de réplicas que se ejecutarán
+  selector:
+    matchLabels:
+      app: vue-3-ecommerce-vs-test
+  template:
+    metadata:
+      labels:
+        app: vue-3-ecommerce-vs-test
+    spec:
+      containers:
+        - name: vue-3-ecommerce-container
+          image: 192.168.0.166:8081/repository/docker-repo/vue-3-ecommerce-vs-test:latest  # URL del repositorio Docker
+          ports:
+            - containerPort: 8081  # Puerto interno del contenedor
+          # Puedes añadir más configuraciones aquí, como variables de entorno, volúmenes, etc.
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vue-3-ecommerce-vs-test-lb
+spec:
+  selector:
+    app: vue-3-ecommerce-vs-test
+  ports:
+    - protocol: TCP
+      port: 80  # Puerto expuesto por el servicio
+      targetPort: 8081  # Puerto del contenedor al que apunta
+  type: LoadBalancer

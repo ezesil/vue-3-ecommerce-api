@@ -6,7 +6,7 @@ stages:
       buildContext: .
       tag: vue-3-ecommerce-vs-test:latest
       pushRemote: true
-      registry: 127.0.0.1:34536
+      registry: http://192.168.0.166:8081/repository/docker-repo
 - name: deploy
   steps:
   - applyYamlConfig:

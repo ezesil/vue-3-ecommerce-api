@@ -3,6 +3,7 @@
 FROM node:18 AS build_vue
 WORKDIR /app/vueapp
 COPY ../vueapp/package.json ./
+COPY ../vueapp/package-lock.json ./
 RUN npm install
 COPY ../vueapp/ .
 RUN npm run build

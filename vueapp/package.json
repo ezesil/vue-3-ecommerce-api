@@ -17,6 +17,10 @@
     "vue-router": "^4.2.5",
     "vuetify": "^3.4.4"
   },
+  "engines": {
+    "node": "18.18.1",
+    "npm": "9.8.1"
+  },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.6.0",
     "@tsconfig/node18": "^18.2.2",

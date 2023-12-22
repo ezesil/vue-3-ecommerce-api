@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: vue-3-ecommerce-container
-          image: 127.0.0.1:34536/vue-3-ecommerce-vs-test:latest  # URL del repositorio Docker
+          image: http://anonymous@192.168.0.166:8081/repository/docker-repo/vue-3-ecommerce-vs-test:latest  # URL del repositorio Docker
           ports:
             - containerPort: 8081  # Puerto interno del contenedor
           # Puedes añadir más configuraciones aquí, como variables de entorno, volúmenes, etc.

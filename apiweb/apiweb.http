@@ -1,6 +1,0 @@
-@apiweb_HostAddress = http://localhost:5170
-
-GET {{apiweb_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

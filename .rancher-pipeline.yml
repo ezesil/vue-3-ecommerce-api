@@ -5,7 +5,6 @@ stages:
       dockerfilePath: ./apiweb/Dockerfile
       buildContext: .
       tag: vue-3-ecommerce-vs-test:latest
-      pushRemote: true
       registry: http://192.168.0.166:8081/repository/docker-repo
 - name: deploy
   steps:

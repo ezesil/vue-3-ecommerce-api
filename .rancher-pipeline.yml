@@ -2,7 +2,7 @@ stages:
 - name: Build
   steps:
   - publishImageConfig:
-      dockerfilePath: ./BlazorNet8Test/Dockerfile
+      dockerfilePath: ./BlazorNet8Test/BlazorNet8Test/Dockerfile
       buildContext: .
       tag: blazornet8test:v1
       pushRemote: true

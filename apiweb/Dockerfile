@@ -1,13 +1,13 @@
 
-# Etapa de construcci髇 del frontend Vue.js
+# Etapa de construcci贸n del frontend Vue.js
 FROM node:18 AS build_vue
 WORKDIR /app/vueapp
-COPY ../vueapp/package*.json ./
+COPY ../vueapp/package.json ./
 RUN npm install
 COPY ../vueapp/ .
 RUN npm run build
 
-# Etapa de construcci髇 del backend .NET Core
+# Etapa de construcci贸n del backend .NET Core
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build_dotnet
 WORKDIR /app/apiweb
 COPY apiweb/*.csproj ./
@@ -15,12 +15,12 @@ RUN dotnet restore
 COPY apiweb/ .
 RUN dotnet publish -c Release -o out
 
-# Etapa final, combinaci髇 de ambas aplicaciones en una imagen
+# Etapa final, combinaci贸n de ambas aplicaciones en una imagen
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 EXPOSE 8080
 WORKDIR /app
 
-# Configuraci髇 de Nginx para servir frontend y redirigir a backend
+# Configuraci贸n de Nginx para servir frontend y redirigir a backend
 RUN apt-get update && apt-get install -y nginx && apt-get install nano -y nano && apt-get install curl -y curl && apt-get install systemctl -y systemctl && apt-get install sudo -y sudo
 RUN rm -rf /etc/nginx/nginx.conf
 COPY apiweb/nginx/nginx.conf /etc/nginx/nginx.conf

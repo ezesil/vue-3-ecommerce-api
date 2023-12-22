@@ -5,6 +5,7 @@ stages:
       dockerfilePath: ./BlazorNet8Test/Dockerfile
       buildContext: .
       tag: blazornet8test:v1
+      pushRemote: true
       registry: http://192.168.0.166:8081/repository/docker-repo
 - name: Deploy
   steps:

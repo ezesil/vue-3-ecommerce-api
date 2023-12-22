@@ -1,6 +1,6 @@
 
 # Etapa de construcción del frontend Vue.js35
-FROM node:18-bullseye AS build_vue
+FROM node:16 AS build_vue
 WORKDIR /app/vueapp
 COPY vueapp/package*.json ./
 RUN npm install

@@ -2,8 +2,8 @@
 # Etapa de construcción del frontend Vue.js
 FROM node:18 AS build_vue
 WORKDIR /app/vueapp
-COPY ../vueapp/package.json ./
-COPY ../vueapp/package-lock.json ./
+COPY ../../vueapp/package.json ./
+COPY ../../vueapp/package-lock.json ./
 RUN npm install
 COPY ../vueapp/ .
 RUN npm run build

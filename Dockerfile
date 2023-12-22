@@ -1,5 +1,5 @@
 
-# Etapa de construcción del frontend Vue.js
+# Etapa de construcción del frontend Vue.js35
 FROM node:18-bullseye AS build_vue
 WORKDIR /app/vueapp
 COPY vueapp/package*.json ./

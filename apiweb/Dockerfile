@@ -3,8 +3,11 @@
 FROM node:18 AS build_vue
 COPY ./vueapp/package.json ./app/vueapp/
 COPY ./vueapp/package-lock.json ./app/vueapp/
+WORKDIR /app/vueapp
 RUN npm install
-COPY ./vueapp/ ./
+WORKDIR /
+COPY ./vueapp/ ./app/vueapp/
+WORKDIR /app/vueapp
 RUN npm run build
 
 # Etapa de construcción del backend .NET Core

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blazornet8test-instance
+spec:
+  replicas: 3  # Número de réplicas que se ejecutarán
+  selector:
+    matchLabels:
+      app: blazornet8test
+  template:
+    metadata:
+      labels:
+        app: blazornet8test
+    spec:
+      containers:
+        - name: vue-3-ecommerce-container
+          image: http://anonymous@192.168.0.166:8081/repository/docker-repo/blazornet8test:v1  # URL del repositorio Docker
+          ports:
+            - containerPort: 8080  # Puerto interno del contenedor
+          # Puedes añadir más configuraciones aquí, como variables de entorno, volúmenes, etc.
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vue-3-ecommerce-vs-test-lb
+spec:
+  selector:
+    app: vue-3-ecommerce-vs-test
+  ports:
+    - protocol: TCP
+      port: 80  # Puerto expuesto por el servicio
+      targetPort: 8080  # Puerto del contenedor al que apunta
+    - protocol: TCP
+      port: 8081  # Puerto expuesto por el servicio
+      targetPort: 8081  # Puerto del contenedor al que apunta
+  type: LoadBalancer
